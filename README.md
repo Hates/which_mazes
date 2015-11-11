@@ -1,5 +1,7 @@
 # Which Mazes
 
+![Screenshot](http://i.imgur.com/Mbc8VNA.png)
+
 ## Exercise Outline
 
 Build a Rails application that generates and solves a Maze. You will be assessed primarily on your:
