@@ -5,8 +5,8 @@ class CreateMazeCells < ActiveRecord::Migration
       t.references :cell
       t.integer :x
       t.integer :y
-      t.starting_cell :boolean, default: false
-      t.ending_cell :boolean, default: false
+      t.boolean :starting_cell, default: false
+      t.boolean :ending_cell, default: false
     end
   end
 end
