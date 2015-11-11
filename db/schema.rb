@@ -11,24 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111130738) do
+ActiveRecord::Schema.define(version: 20151111141731) do
 
   create_table "cells", force: :cascade do |t|
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "carved_north", default: false
-    t.boolean  "carved_south", default: false
-    t.boolean  "carved_east",  default: false
-    t.boolean  "carved_west",  default: false
-  end
-
-  create_table "maze_cells", force: :cascade do |t|
-    t.integer "maze_id"
-    t.integer "cell_id"
-    t.integer "x"
-    t.integer "y"
-    t.boolean "starting_cell", default: false
-    t.boolean "ending_cell",   default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "carved_north",  default: false
+    t.boolean  "carved_south",  default: false
+    t.boolean  "carved_east",   default: false
+    t.boolean  "carved_west",   default: false
+    t.integer  "maze_id"
+    t.integer  "x"
+    t.integer  "y"
+    t.boolean  "starting_cell", default: false
+    t.boolean  "ending_cell",   default: false
   end
 
   create_table "mazes", force: :cascade do |t|

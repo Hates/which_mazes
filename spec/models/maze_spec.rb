@@ -9,12 +9,6 @@ RSpec.describe Maze, type: :model do
 
   describe "#generate_base_cells" do
 
-    it "generates the right number of maze cells" do
-      subject.generate_base_cells
-
-      expect(subject.maze_cells.size).to equal(width * height)
-    end
-
     it "generates the right number of cells" do
       subject.generate_base_cells
 
