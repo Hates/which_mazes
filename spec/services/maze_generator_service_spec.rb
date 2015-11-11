@@ -5,8 +5,9 @@ RSpec.describe MazeGeneratorService do
   let(:width) { 10 }
   let(:height) { 10 }
 
+  let(:maze) { create :maze, width: width, height: height }
   let(:maze_generator) { MazeGenerators::Dummy }
-  subject { MazeGeneratorService.new(width, height, maze_generator) }
+  subject { MazeGeneratorService.new(maze, maze_generator) }
 
   describe "#generate" do
 

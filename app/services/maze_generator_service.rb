@@ -1,9 +1,10 @@
 class MazeGeneratorService
 
-  attr_accessor :generator
+  attr_accessor :maze, :generator
 
-  def initialize(width, height, generator = MazeGenerators::RecursiveBacktracker)
-    @generator = generator.new(width, height)
+  def initialize(maze, generator = MazeGenerators::RecursiveBacktracker)
+    @maze = maze
+    @generator = generator.new(maze)
   end
 
   def generate

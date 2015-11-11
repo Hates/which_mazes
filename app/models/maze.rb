@@ -21,4 +21,28 @@ class Maze < ActiveRecord::Base
     cells.group_by(&:y)
   end
 
+  def cell_at(x, y)
+    cells.detect { |c| c.x == x && c.y == y }
+  end
+
+  def neighbours(x, y)
+    cell_at(x,y).neighbours
+  end
+
+  def pretty_print
+    output =  "&nbsp;" + "_" * (width * 2 - 1)
+    output << "<br>"
+    height.times do |y|
+      output << "|"
+      width.times do |x|
+        output << (cell_at(x,y).carved_south? ? "&nbsp;" : "_")
+        output << (cell_at(x,y).carved_east? ? "&nbsp;" : "|")
+      end
+
+      output << "<br>"
+    end
+
+    output
+  end
+
 end

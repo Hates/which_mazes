@@ -37,4 +37,32 @@ RSpec.describe Maze, type: :model do
 
   end
 
+  describe "#cell_at" do
+
+    before { subject.generate_base_cells }
+
+    it "returns the cell at a given x and y" do
+      cell = subject.cell_at(1, 2)
+
+      expect(cell.x).to equal(1)
+      expect(cell.y).to equal(2)
+    end
+
+  end
+
+  describe "#neighbours" do
+
+    before { subject.generate_base_cells }
+
+    it "returns the neighbours at a given x and y" do
+      neighbours = subject.neighbours(1, 1)
+
+      expect(neighbours.north).to equal(subject.cell_at(1, 0))
+      expect(neighbours.south).to equal(subject.cell_at(1, 2))
+      expect(neighbours.east).to equal(subject.cell_at(2, 1))
+      expect(neighbours.west).to equal(subject.cell_at(0, 1))
+    end
+
+  end
+
 end

@@ -1,11 +1,15 @@
 module MazeGenerators
   class Base
 
-    attr_accessor :width, :height
+    attr_accessor :maze
 
-    def initialize(width, height)
-      @width = width
-      @height = height
+    def initialize(maze)
+      @maze = maze
+      after_initialize
+    end
+
+    def after_initialize
+      # Empty stub
     end
 
   end
