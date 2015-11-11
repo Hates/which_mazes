@@ -5,8 +5,6 @@ module MazeGenerators
 
     def initialize(maze)
       @maze = maze
-      @maze.update_attribute :generator, self.class
-
       after_initialize
     end
 

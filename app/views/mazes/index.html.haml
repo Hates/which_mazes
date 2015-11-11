@@ -1,4 +1,28 @@
+.panel.panel-default
+  .panel-heading
+    %h4 New Maze
+  .panel-body
+    = form_for :maze, url: mazes_path do |maze_form|
+      .form-group
+        = maze_form.label :generator
+        = maze_form.select :generator, [["Recursive Backtracker",""]], {}, class: "form-control"
+      .form-group
+        = maze_form.label :width
+        = maze_form.select :width, (5..20), {}, class: "form-control"
+      .form-group
+        = maze_form.label :height
+        = maze_form.select :height, (5..20), {}, class: "form-control"
+      = maze_form.button class: "btn btn-primary" do
+        Create Maze
+
 - @mazes.each do |maze|
-  %pre
-    != pretty_print_maze maze
-  %hr
+  .panel.panel-default
+    .panel-heading
+      .btn-toolbar.pull-right
+        .btn-group
+          = link_to maze_path(maze), method: :delete, class: "btn btn-danger" do
+            Delete Maze
+      %h4= maze.generator || "N/A"
+    .panel-body
+      %pre
+        != pretty_print_maze maze

@@ -49,4 +49,4 @@ Resources:
 
 Easiest solution seems to be a wall follower. As the generator used is simply connected this appears to be the quickest to attmpt to implement.
 
-[https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
+[https://en.wikipedia.org/wiki/Maze_solving_algorithm](https://en.wikipedia.org/wiki/Maze_solving_algorithm)
