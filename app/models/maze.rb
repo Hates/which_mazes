@@ -29,20 +29,4 @@ class Maze < ActiveRecord::Base
     cell_at(x,y).neighbours
   end
 
-  def pretty_print
-    output =  "&nbsp;" + "_" * (width * 2 - 1)
-    output << "<br>"
-    height.times do |y|
-      output << "|"
-      width.times do |x|
-        output << (cell_at(x,y).carved_south? ? "&nbsp;" : "_")
-        output << (cell_at(x,y).carved_east? ? "&nbsp;" : "|")
-      end
-
-      output << "<br>"
-    end
-
-    output
-  end
-
 end
