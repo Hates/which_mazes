@@ -1,4 +1,4 @@
 module MazeGenerators
-  class RecursiveBacktracker
+  class RecursiveBacktracker < Base
   end
 end

@@ -1,8 +1,8 @@
 module MazeGenerators
-  class Dummy
+  class Dummy < Base
 
     def generate
-      Maze.new
+      Maze.new width: width, height: height
     end
 
   end
