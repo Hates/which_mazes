@@ -42,7 +42,11 @@ Most implementations use bitwise operations to keep a track of the paths but I w
 Resources:
 
 [https://en.wikipedia.org/wiki/Maze_generation_algorithm](https://en.wikipedia.org/wiki/Maze_generation_algorithm)  
-[http://www.astrolog.org/labyrnth/algrithm.htm](http://www.astrolog.org/labyrnth/algrithm.htm)  
-[http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking](http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking)
+[http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking](http://weblog.jamisbuck.org/2010/12/27/maze-generation-recursive-backtracking)  
+[https://www.youtube.com/watch?v=elMXlO28Q1U](https://www.youtube.com/watch?v=elMXlO28Q1U)
 
 ## Maze solving
+
+Easiest solution seems to be a wall follower. As the generator used is simply connected this appears to be the quickest to attmpt to implement.
+
+[https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower](https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower)
