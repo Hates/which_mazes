@@ -1,7 +1,7 @@
 module MazesHelper
 
   def solve(maze)
-    solver = MazeSolvers::WallFollower.new(maze)
+    solver = MazeSolverService.new(maze)
     solver.solve
     solver.steps
   end

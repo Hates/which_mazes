@@ -8,7 +8,7 @@ class MazesController < ApplicationController
     @maze = Maze.create maze_attributes
     @maze.generate_base_cells
 
-    MazeGenerators::RecursiveBacktracker.new(@maze).generate
+    MazeGeneratorService.new(@maze).generate
 
     flash[:success] = "Maze created!"
     redirect_to root_path
