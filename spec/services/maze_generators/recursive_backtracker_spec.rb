@@ -9,8 +9,9 @@ RSpec.describe MazeGenerators::RecursiveBacktracker do
 
   describe "#generate" do
 
+    before { maze.generate_base_cells }
+
     it "generates a maze with no cells walls uncarved" do
-      maze.generate_base_cells
       subject.generate
 
       maze.cells.each do |cell|
@@ -19,7 +20,6 @@ RSpec.describe MazeGenerators::RecursiveBacktracker do
     end
 
     it "generates a maze with no cells with every wall carved" do
-      maze.generate_base_cells
       subject.generate
 
       maze.cells.each do |cell|
@@ -27,7 +27,12 @@ RSpec.describe MazeGenerators::RecursiveBacktracker do
       end
     end
 
+    it "returns the maze" do
+      expect(subject.generate).to equal(maze)
+    end
+
   end
+
   describe "#carve" do
 
     context "with a visited cell" do

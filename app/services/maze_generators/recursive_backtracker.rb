@@ -25,6 +25,7 @@ module MazeGenerators
     #
     def generate
       carve maze.cell_at(0,0)
+      maze
     end
 
     def carve(cell)
