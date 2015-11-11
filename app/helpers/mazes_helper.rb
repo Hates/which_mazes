@@ -1,5 +1,11 @@
 module MazesHelper
 
+  def solve(maze)
+    solver = MazeSolvers::WallFollower.new(maze)
+    solver.solve
+    solver.steps
+  end
+
   def pretty_print_maze(maze)
     output =  "&nbsp;" + "_" * (maze.width * 2 - 1)
     output << "<br>"

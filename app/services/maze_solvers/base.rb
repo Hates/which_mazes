@@ -1,4 +1,4 @@
-module MazeGenerators
+module MazeSolvers
   class Base
 
     attr_accessor :maze

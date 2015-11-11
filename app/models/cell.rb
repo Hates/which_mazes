@@ -7,11 +7,11 @@ class Cell < ActiveRecord::Base
   belongs_to :maze
 
   def remove_wall(direction)
-    update_attribute "carved_#{direction}".to_s, true
+    update_attribute "carved_#{direction}".to_sym, true
   end
 
   def remove_opposite_wall(direction)
-    update_attribute "carved_#{OPPOSITES[direction]}".to_s, true
+    update_attribute "carved_#{OPPOSITES[direction]}".to_sym, true
   end
 
   def neighbours

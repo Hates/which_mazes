@@ -5,7 +5,7 @@
     = form_for :maze, url: mazes_path do |maze_form|
       .form-group
         = maze_form.label :generator
-        = maze_form.select :generator, [["Recursive Backtracker",""]], {}, class: "form-control"
+        = maze_form.select :generator, [["Recursive Backtracker","recursive_backtracker"], ["Randomised Kruskals", "randomised_kruskals"], ["Randomised Prims", "randomised_prims"]], {}, class: "form-control"
       .form-group
         = maze_form.label :width
         = maze_form.select :width, (5..20), {}, class: "form-control"
@@ -24,5 +24,13 @@
             Delete Maze
       %h4= maze.generator || "N/A"
     .panel-body
-      %pre
-        != pretty_print_maze maze
+      .row
+        .col-xs-4
+          %pre
+            != pretty_print_maze maze
+        .col-xs-8
+          %strong Solution
+          %br
+          - solve(maze).each do |step|
+            %span.label.label-success #{step.x},#{step.y}
+

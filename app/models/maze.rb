@@ -10,6 +10,9 @@ class Maze < ActiveRecord::Base
       end
     end
 
+    cell_at(0,0).starting_cell = true
+    cell_at(width - 1, height - 1).ending_cell = true
+
     save!
   end
 

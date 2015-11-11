@@ -9,10 +9,18 @@ RSpec.describe Maze, type: :model do
 
   describe "#generate_base_cells" do
 
-    it "generates the right number of cells" do
-      subject.generate_base_cells
+    before { subject.generate_base_cells }
 
+    it "generates the right number of cells" do
       expect(subject.cells.size).to equal(width * height)
+    end
+
+    it "sets the starting cell" do
+      expect(subject.cell_at(0,0)).to be_starting_cell
+    end
+
+    it "sets the ending cell" do
+      expect(subject.cell_at(width - 1, height - 1)).to be_ending_cell
     end
 
   end
