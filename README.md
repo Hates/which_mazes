@@ -37,7 +37,7 @@ While there are unvisited cells
 		Make it the current cell
 ```
 
-Most implementations use bitwise operations to keep a track of the paths but I would like to have an actual `Cell` model to represent the individual cells of a maze.
+Most implementations use bitwise operations to keep a track of the paths but I would like to have an actual `Cell` model to represent the individual cells of a maze. While this can all be done in memory without the need to store the data, as the outline asks for a rails app I will store the actual mazes in the database.
 
 Resources:
 
